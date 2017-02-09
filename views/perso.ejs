@@ -1,0 +1,35 @@
+<body>
+  <h1>Bonjour monsieur</h1>
+  <h2>Bienvenue chez JACKY TUNING</h2>
+  <h3>Spécialiste de la customisation de père en fils<h3>
+  <br />
+  <p>Votre Mail : <%= user.email %></p>
+  <p>Votre Nom : <%=user.firstname%></p>
+  <p>Votre prenom : <%=user.lastname%></p>
+  <p>Votre adresse : </p>
+  <p>
+    <%=user.addresses[0].number%>
+    <%=user.addresses[0].street%>
+    0<%=user.addresses[0].codePoste%>
+    <%=user.addresses[0].city%>
+  </p>
+  <br />
+  <div>
+    <br />
+    <h1>Modifier vos informations </h1>
+    <form method="POST" action="/user/<%=user.id%>" >
+      <p>Nom :  </p><input type="text" name="firstname" >
+      <p>Prenom :  </p><input type="text" name="lastname" ><br /><br />
+      <input type="submit" value="Soumettre">
+    </form>
+    <br />
+    <form method="POST" action="/address/<%=user.addresses[0].id%>" >
+          <p>Numéro :  </p><input type="text" name="number" >
+          <p>Rue :  </p><input type="text" name="street" >
+          <p>Code Postal :  </p><input type="text" name="codePoste" >
+          <p>Ville :  </p><input type="text" name="city" >
+          <br /><br />
+          <input type="submit" value="Soumettre">
+    </form>
+  </div>
+</body>

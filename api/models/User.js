@@ -31,6 +31,10 @@ module.exports = {
             collection: 'address',
             via: 'owner'
         },
+        avatarUrl: {
+          type: 'string',
+          required: false
+        },
         toJSON: function() {
             var obj = this.toObject();
             delete obj.password;

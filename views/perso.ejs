@@ -8,11 +8,13 @@
   <p>Votre prenom : <%=user.lastname%></p>
   <p>Votre adresse : </p>
   <p>
+
     <%=user.addresses[0].number%>
     <%=user.addresses[0].street%>
-    0<%=user.addresses[0].codePoste%>
+    <%=user.addresses[0].codePoste%>
     <%=user.addresses[0].city%>
   </p>
+  <img src=""/>
   <br />
   <div>
     <br />
@@ -31,5 +33,10 @@
           <br /><br />
           <input type="submit" value="Soumettre">
     </form>
+    <br />
+    <form method="POST" enctype="multipart/form-data" action="/perso/upload" >
+              <input type="file" name="avatar"><br />
+              <input type="submit" value="Soumettre">
+        </form>
   </div>
 </body>

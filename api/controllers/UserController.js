@@ -5,6 +5,8 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
+ var path = require('path');
+
 module.exports = {
   perso: function (req, res)
   {
@@ -39,8 +41,27 @@ module.exports = {
     })
   },
 
-  upload: function() {
-  },
-
+  upload: function  (req, res) {
+       var data = {};
+      var where = {id: req.user.id};
+      req.file('avatar').upload({
+        dirname: path.resolve(sails.config.appPath, 'assets/images/')
+      },function (err, uploadedFiles) {
+        if (err) return res.negotiate(err);
+        path.basename(uploadedFiles[0].fd);
+        console.log(path.basename(uploadedFiles[0].fd));
+        User.update({id:req.user.id}, {avatarUrl:path.basename(uploadedFiles[0].fd)}
+        ,function (err, uploadedFiles) {
+          User.findOne()
+              .exec(function(error, user) {
+                    console.log(user);
+                    data.user = user;
+                    return res.view('perso', data);
+              })
+      });
+      });
+      },
 };
+
+
 

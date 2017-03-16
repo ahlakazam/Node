@@ -34,7 +34,7 @@ module.exports.routes = {
     action: 'moncompte',
   },
 
-  '/upload': {
+  '/perso/upload': {
     controller: 'UserController',
     action: 'upload',
   },

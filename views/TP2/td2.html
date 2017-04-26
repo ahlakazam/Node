@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Page TP2</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <script src="tp2.js"></script>
 </head>
-<body>
-
+<body onload="initSelection()">
+<div id="frameInsert">
+  <input type="button" value="DIV" onclick="insertB('div')"/>
+  <input type="button" value="P" onclick="insertB('p')"/>
+  <input type="button" value="H2" onclick="insertB('h2')"/>
+  <input type="text" id="toInsert"/>
+</div>
+<div>
+  <h1 class="classe1">Test H1</h1>
+</div>
+<div id="div2">
+  <h2>Test H2 1</h2>
+  <h2>Test H2 2</h2>
+</div>
+<div>
+  <ul>
+    <li><p><a class="blanc" href="td2.html">Lien vers la même page</a></p></li>
+    <li><button id="demo">Test</button></li>
+  </ul>
+</div>
 </body>
+
 </html>

@@ -34,6 +34,10 @@ module.exports.routes = {
     action: 'moncompte',
   },
 
+  'get /participants': {
+    view: 'participants',
+  },
+
   '/perso/upload': {
     controller: 'UserController',
     action: 'upload',

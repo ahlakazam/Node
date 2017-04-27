@@ -21,13 +21,12 @@ function selection2(event) {
     if (previousElement != null)
       previousElement.style.backgroundColor = previousElementBackGround;
     previousElement = element;
-    insertB(element);
   }
 }
 
-function insertB(target) {
+function insertB(type) {
   var insert = document.getElementById("toInsert");
-  target.before(insert.value);
+  previousElement.before("<"+type+">"+insert.value+"</"+type+">");
 }
 
 function initSelection () {

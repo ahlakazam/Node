@@ -49,5 +49,10 @@ module.exports.routes = {
 
   'get /signup': {
     view: 'signup'
-  }
+  },
+
+  'post /perso/test': {
+    controller: 'UserController',
+    action: 'testAjax',
+  },
 };
